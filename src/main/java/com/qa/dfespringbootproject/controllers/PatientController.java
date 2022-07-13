@@ -34,8 +34,14 @@ public class PatientController {
 
 //	ReadByID
 	@GetMapping("/readById/{id}")
-	public Patient readById(@PathVariable int id) {
+	public Patient readById(@PathVariable long id) {
 		return this.service.readById(id);
+	}
+
+//	ReadByFirstName
+	@GetMapping("/readbyFirstName/{firstName}")
+	public List<Patient> readByfirstName(@PathVariable String firstName) {
+		return this.service.readByFirstName(firstName);
 
 	}
 
@@ -47,15 +53,13 @@ public class PatientController {
 
 //PUT - UPDATE
 	@PutMapping("/update/{id}")
-	public Patient update(@PathVariable int id, @RequestBody Patient patient) {
+	public Patient update(@PathVariable long id, @RequestBody Patient patient) {
 		return this.service.update(id, patient);
 	}
 
 //DELETE - DELETE
 	@DeleteMapping("/delet/{id}")
-	public Patient delet(@PathVariable int id) {
-		return this.service.delet(id);
-
+	public boolean delete(@PathVariable long id) {
+		return this.service.delete(id);
 	}
-
 }
