@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-i
+
 import com.qa.dfespringbootproject.entities.Patient;
 
 @Service
@@ -46,8 +46,5 @@ public Patient update(int id,Patient patient) {
 		return this.patients.remove(id);
 
 	}
-
-}
-
 
 }
