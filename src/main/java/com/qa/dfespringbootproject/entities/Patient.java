@@ -29,69 +29,65 @@ public class Patient {
 //	Default constructor
 	public Patient() {}
 
-//	without ID
-	public Patient(String firstName, String lastName, int age, long telephoneNumber) {
-	super();
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.age = age;
-	this.email = telephoneNumber;
-}
-	
-//	With ID Constructor
-	public Patient(long id, String firstName, String lastName, int age, long telephoneNumber) {
+//	Constructor without ID
+	public Patient(String firstName, String lastName, int age, String email) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.email = email;
+	}
+
+
+//	Constructor With ID
+public Patient(long id, String firstName, String lastName, int age, String email) {
 	super();
 	this.id = id;
 	this.firstName = firstName;
 	this.lastName = lastName;
 	this.age = age;
-	this.email = telephoneNumber;
+	this.email = email;
 }
 
+public long getId() {
+	return id;
+}
 
-	public long getId() {
-		return id;
-	}
+public void setId(long id) {
+	this.id = id;
+}
 
-	public void setId(long id) {
-		this.id = id;
-	}
+public String getFirstName() {
+	return firstName;
+}
 
-	public String getFirstName() {
-		return firstName;
-	}
+public void setFirstName(String firstName) {
+	this.firstName = firstName;
+}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+public String getLastName() {
+	return lastName;
+}
 
-	public String getLastName() {
-		return lastName;
-	}
+public void setLastName(String lastName) {
+	this.lastName = lastName;
+}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+public int getAge() {
+	return age;
+}
 
-	public int getAge() {
-		return age;
-	}
+public void setAge(int age) {
+	this.age = age;
+}
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+public String getEmail() {
+	return email;
+}
 
-	public long getTelephoneNumber() {
-		return email;
-	}
-
-	public void setTelephoneNumber(long telephoneNumber) {
-		this.email = telephoneNumber;
-	}
-
-	
-	
-	
+public void setEmail(String email) {
+	this.email = email;
+}
 	
 
 }
