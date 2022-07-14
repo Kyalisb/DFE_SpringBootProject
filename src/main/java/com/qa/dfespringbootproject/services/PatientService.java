@@ -1,6 +1,5 @@
 package com.qa.dfespringbootproject.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -41,7 +40,15 @@ public class PatientService {
 //PUT - UPDATE
 
 public Patient update(long id,Patient patient) {
-	return this.repo.findById(id).get();
+	Patient existing = this.repo.findById(id).get();
+	existing.setFirstName(patient.getFirstName());
+	existing.setLastName(patient.getLastName());
+	existing.setEmail(patient.getEmail());
+	existing.setAge(patient.getAge());
+	
+//	save
+	return this.repo.saveAndFlush(existing);
+//	return this.repo.findById(id).get();
    }
 //	Adding
 //	this.patients.add(id,patient);return this.patients.get(id);
