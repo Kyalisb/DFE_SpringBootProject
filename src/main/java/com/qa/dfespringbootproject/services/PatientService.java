@@ -26,11 +26,11 @@ public class PatientService {
 	public Patient readById(long id) {
 		return this.repo.findById(id).get();
 	}
-
-//	ReadByFirstName
-	public List<Patient> readByFirstName(String firstName) {
-		return this.repo.findPatientByFirstName(firstName);
-	}
+//
+////	ReadByFirstName
+//	public List<Patient> readByFirstName(String firstName) {
+//		return this.repo.findPatientByFirstName(firstName);
+//	}
 
 //POST - CREATE
 
@@ -56,6 +56,7 @@ public Patient update(long id,Patient patient) {
 //DELETE - DELETE
 
 	public boolean delete(long id) {
+		this.repo.deleteById(id);
 		return !this.repo.existsById(id);
 	}
 }
