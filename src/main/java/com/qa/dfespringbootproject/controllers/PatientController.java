@@ -38,12 +38,12 @@ public class PatientController {
 		return this.service.readById(id);
 	}
 
-////	ReadByFirstName
-//	@GetMapping("/readbyFirstName/{firstName}")
-//	public List<Patient> readByfirstName(@PathVariable String firstName) {
-//		return this.service.readByFirstName(firstName);
-//
-//	}
+///ReadByFirstName
+	@GetMapping("/readbyFirstName/{firstName}")
+	public List<Patient> readByfirstName(@PathVariable String firstName) {
+		return this.service.readByFirstName(firstName);
+
+	}
 
 //POST - CREATE
 	@PostMapping("/create")

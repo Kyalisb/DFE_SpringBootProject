@@ -27,10 +27,10 @@ public class PatientService {
 		return this.repo.findById(id).get();
 	}
 //
-////	ReadByFirstName
-//	public List<Patient> readByFirstName(String firstName) {
-//		return this.repo.findPatientByFirstName(firstName);
-//	}
+//	ReadByFirstName
+	public List<Patient> readByFirstName(String firstName) {
+		return this.repo.findPatientByFirstName(firstName);
+	}
 
 //POST - CREATE
 
