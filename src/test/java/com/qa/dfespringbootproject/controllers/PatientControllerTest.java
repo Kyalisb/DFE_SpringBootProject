@@ -71,18 +71,19 @@ public class PatientControllerTest {
 		mvc.perform(get("/patient/readById/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().json(entryAsJSON));
 	}
-
 	@Test
 	public void readByFirstName() throws Exception {
 		List<Patient> output = new ArrayList<>();
-		Patient entry = new Patient("Brenda");
+		Patient entry = new Patient(1L, "Brenda", "Kyalisiima", 30, "kyalisb@gmail.com");
 		output.add(entry);
 
 		String outputAsJSON = mapper.writeValueAsString(output);
 
 		mvc.perform(get("/patient/readByFirstName").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().json(outputAsJSON));
+
 	}
+
 
 	@Test
 	public void updateTest() throws Exception {
@@ -97,9 +98,8 @@ public class PatientControllerTest {
 
 	@Test
 	public void deleteTest() throws Exception {
-		mvc.perform(delete("/patient/delete/1").contentType(MediaType.APPLICATION_JSON))
+		mvc.perform(delete("/patient/delete/l").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().string("true"));
 	}
 }
-
 
