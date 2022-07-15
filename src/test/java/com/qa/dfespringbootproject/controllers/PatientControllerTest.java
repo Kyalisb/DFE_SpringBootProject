@@ -20,7 +20,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 
-//import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.dfespringbootproject.entities.Patient;
 
@@ -71,18 +71,18 @@ public class PatientControllerTest {
 		mvc.perform(get("/patient/readById/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().json(entryAsJSON));
 	}
-	
-//	@Test
-//	public void readByFirstName() throws Exception {
-//		List<Patient> output = new ArrayList<>();
-//		Patient entry = new Patient("B");
-//		output.add(entry);
-//
-//		String outputAsJSON = mapper.writeValueAsString(output);
-//
-//		mvc.perform(get("/patient/readByFirstName").contentType(MediaType.APPLICATION_JSON))
-//				.andExpect(content().json(outputAsJSON));
-//	}
+
+	@Test
+	public void readByFirstName() throws Exception {
+		List<Patient> output = new ArrayList<>();
+		Patient entry = new Patient("Brenda");
+		output.add(entry);
+
+		String outputAsJSON = mapper.writeValueAsString(output);
+
+		mvc.perform(get("/patient/readByFirstName").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(content().json(outputAsJSON));
+	}
 
 	@Test
 	public void updateTest() throws Exception {
@@ -100,5 +100,6 @@ public class PatientControllerTest {
 		mvc.perform(delete("/patient/delete/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().string("true"));
 	}
-
 }
+
+
